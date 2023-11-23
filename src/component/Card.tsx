@@ -20,10 +20,8 @@ const Card = () => {
 
   function combineAnswer(incorrectAnswers: string[], correctAnswer: string) {
     //!spreading the inccorect array and correct answers
+
     let allAnswer = [...incorrectAnswers, correctAnswer];
-    // incorrectAnswers.map((item) => {
-    //   return allAnswer.push(item);
-    // });
 
     allAnswer.push(correctAnswer);
 
@@ -83,7 +81,7 @@ const Card = () => {
             color: "#45474B",
           }}
         >
-          <span>1</span>
+          <span>{questionCount + 1}</span>
           <span>{question}</span>
         </Box>
         {/* //?answer side  */}
