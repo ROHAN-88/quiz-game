@@ -19,6 +19,7 @@ const Card = () => {
   });
 
   function combineAnswer(incorrectAnswers: string[], correctAnswer: string) {
+    //!spreading the inccorect array and correct answers
     let allAnswer = [...incorrectAnswers, correctAnswer];
     // incorrectAnswers.map((item) => {
     //   return allAnswer.push(item);
@@ -67,7 +68,7 @@ const Card = () => {
       <Box
         sx={{
           width: "500px",
-          height: "400px",
+          height: "auto",
           boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
           borderRadius: "20px",
         }}
@@ -77,6 +78,8 @@ const Card = () => {
             fontSize: "18px",
             textAlign: "center",
             padding: "2rem 1rem",
+            // border: "1px red solid",
+            height: "100px",
             color: "#45474B",
           }}
         >
@@ -103,7 +106,11 @@ const Card = () => {
         </Box>
 
         <Box
-          sx={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            padding: "3rem 0rem",
+          }}
         >
           <Button
             variant="contained"
