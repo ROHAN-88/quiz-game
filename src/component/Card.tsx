@@ -19,10 +19,10 @@ const Card = () => {
   });
 
   function combineAnswer(incorrectAnswers: string[], correctAnswer: string) {
-    let allAnswer = [];
-    incorrectAnswers.map((item) => {
-      return allAnswer.push(item);
-    });
+    let allAnswer = [...incorrectAnswers, correctAnswer];
+    // incorrectAnswers.map((item) => {
+    //   return allAnswer.push(item);
+    // });
 
     allAnswer.push(correctAnswer);
 
@@ -33,7 +33,7 @@ const Card = () => {
   }
 
   const checkAnswer = (answer: string) => {
-    if (answer == correctAnswer) {
+    if (answer === correctAnswer) {
       return setCount(count + 1);
     } else {
       return setCount(count - 1);
