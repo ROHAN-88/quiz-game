@@ -48,7 +48,7 @@ const Card = () => {
         dataOfQuiz[questionCount]?.incorrect_answers,
         dataOfQuiz[questionCount]?.correct_answer
       );
-      setQuestion(dataOfQuiz[0]?.question);
+      setQuestion(dataOfQuiz[questionCount]?.question);
       setCorrectAnswer(dataOfQuiz[questionCount]?.correct_answer);
     }
   }, [isLoading, questionCount]);
