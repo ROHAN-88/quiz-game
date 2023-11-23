@@ -62,7 +62,7 @@ const Card = () => {
   return (
     <>
       <p style={{ fontSize: "25px", textAlign: "center", margin: "2rem 0rem" }}>
-        Count:{count}
+        Points:{count}
       </p>
       <Box
         sx={{
