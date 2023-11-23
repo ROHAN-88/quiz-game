@@ -105,7 +105,13 @@ const Card = () => {
         <Box
           sx={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}
         >
-          <Button variant="contained"> Next</Button>
+          <Button
+            variant="contained"
+            onClick={() => setQuestionCount(questionCount + 1)}
+          >
+            {" "}
+            Next
+          </Button>
         </Box>
       </Box>
     </>
