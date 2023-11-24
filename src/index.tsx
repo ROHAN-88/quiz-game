@@ -1,11 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import RoutesApplication from "./routes/RoutesApplication";
 
+//! import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const queryClient = new QueryClient();
+
+//!Router
+const application = [...RoutesApplication];
+const router = createBrowserRouter(application);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -13,7 +19,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <>
     <QueryClientProvider client={queryClient}>
-      <App />
+      <RouterProvider router={router} />
     </QueryClientProvider>
   </>
 );

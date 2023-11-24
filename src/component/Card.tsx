@@ -3,9 +3,15 @@ import { useQuery } from "react-query";
 import { dataApi } from "../lib/dataAxios";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { type } from "os";
+import Score from "./Score";
 // import { dataApi } from "./lib/dataAxios";
 const Card = () => {
+  //!=============================
+  const navigate = useNavigate();
+
+  //!=======useState ==============
   const [question, setQuestion] = useState<string[]>([]);
   const [allPossibleAnswer, setAllPossibleAnswer] = useState<string[]>([]);
   const [questionCount, setQuestionCount] = useState<number>(0);
@@ -52,6 +58,11 @@ const Card = () => {
     }
   }, [isLoading, questionCount]);
 
+  if (questionCount === 45) {
+    // navigate("/score");
+    return <Score count={count} />;
+  }
+
   if (isLoading) {
     return <h1 style={{ color: "#7743DB" }}>Loading...</h1>;
   }
@@ -60,6 +71,13 @@ const Card = () => {
   // !todo button ,use another api ,
   return (
     <>
+      <div
+        style={{ textAlign: "center", marginBottom: "2rem", color: "#7743DB" }}
+      >
+        <h2 style={{ fontSize: "40px" }}>Quiz Game </h2>
+        <h4>Select your Answer</h4>
+      </div>
+
       <p style={{ fontSize: "25px", textAlign: "center", margin: "2rem 0rem" }}>
         Points:{count}
       </p>
